@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> let에 대하여 </title>
+</head>
+<script>
+    /* TDZ(Temporal Dead Zone)란?
+        - 일시적인 사각지대로, 변수를 사용하는 것을 비허용하는 개념 상의 공간
+        - let과 const로 변수 선언 시 초기화되기 전까지 이 공간에 머물러 있음
+    */
+
+    // 1. 블록 레벨 스코프를 가지고 있음
+    for (let i=1; i<4; i++) {
+        console.log(i);
+    }
+    console.log(i);                                        // Uncaught ReferenceError: i is not defined at _____
+
+    // 2 .키워드 생략 불가능 (생략 시 `var`처럼 작동)
+
+    // 3. 중복 선언 불가능
+    let new_variant = "새로운 변수";
+    // let new_variant = "중복 선언된 변수";                   Uncaught SyntaxError: Identifier 'new_variant' has already been declared
+
+    // 4. 호이스팅 당함 (단, Temporary Dead Zone을 통해)
+    console.log(hoi);                                      // Uncaught ReferenceError: Cannot access 'hoi' before initialization 
+    let hoi = "호이스팅 당함";
+</script>
+<body>
+    
+</body>
+</html>
