@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> match VS search VS indexOf </title>
+</head>
+<script>
+    // 공통점: 처음 검색된 문자열의 인덱스 반환
+
+    let str = "안녕하세요? 안녕!";
+    
+    // 1. match(정규식개체 or 찾을 문자열) 함수
+    document.write(str.match("안녕") + "<br/>");        // 안녕
+    document.write(str.match("바이") + "<br/>");        // null
+
+
+    // 2. search(정규식개체 or 찾을 문자열) 함수
+    document.write(str.search("안녕") + "<br/>");       // 0
+    document.write(str.search("바이") + "</br>");       // -1
+    // ==> 두 번째 혹은 다른 시작 위치를 인수로 지정할 수 없음
+
+    // 3. indexOf(찾을 문자열, 시작인덱스)
+    document.write(str.indexOf("안녕") + "</br>");      // 0
+    document.write(str.indexOf("안녕", 3) + "</br>");   // 7
+    document.write(str.indexOf("바이") + "</br>");      // -1
+</script>
+<body>
+    
+</body>
+</html>
