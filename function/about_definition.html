@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 함수 정의 방식 </title>
+</head>
+<script>
+    // 일반 정의 함수는 함수 호출 시 호이스팅(hoisting) 기술을 지원
+    generalFnc();
+
+    function generalFnc() {
+        document.write("<h3> 일반 정의 함수 </h3>");
+    }
+
+    // 익명 함수 참조 방식은 호이스팅(hoisting)을 지원하지 않음
+    testFnc();                       // TypeError: testFnc is not a function
+    document.write(testFnc);            // undefined 출력
+
+    var testFnc = function() {
+        document.write("<h3> 익명 함수 참조 방식 </h3>");
+    }
+
+    testFnc();                          // 정상적으로 출력
+
+    // ==> var은 호이스팅 지원, function()은 호이스팅 지원X
+
+    /* === 결론 ===
+        익명 함수 선언 참조 방식으로 통일
+    */
+</script>
+<body>
+    
+</body>
+</html>
