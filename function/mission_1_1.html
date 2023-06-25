@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> p155 Mission1 </title>
+</head>
+<script>
+    // 버튼을 누르면 Body의 backgroundColor가 바뀌는 웹
+    function changeColor() {
+        let arrColor = ["#ff0", "#6c0", "#fcf", "#cf0", "#39f"];
+        let selColor = Math.floor(Math.random() * arrColor.length);
+        
+        document.getElementById("theBody").style.backgroundColor = arrColor[selColor];
+    }
+</script>
+<body id="theBody">
+    <button onclick="changeColor()"> 배경 색상 바꾸기 </button>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> p156 Mission2 </title>
+</head>
+<script>
+    function TestScore(name, kor, eng) {
+        this.userName = name;
+        this.userKor = kor;
+        this.userEng = eng;
+    }
+
+    TestScore.prototype.getTestInfo = function() {
+        document.write("이름: " + this.userName + "</br>");
+        document.write("국어: " + this.userKor + "</br>");
+        document.write("영어: " + this.userEng + "</br>");
+    }
+
+    TestScore.prototype.getAvg = function() {
+        return (this.userKor + this.userEng) / 2;
+    }
+
+    let kimgun = new TestScore("김군", 80, 90);
+    kimgun.getTestInfo();
+    document.write("평균 점수: " + kimgun.getAvg());
+</script>
+<body>
+    
+</body>
+</html>

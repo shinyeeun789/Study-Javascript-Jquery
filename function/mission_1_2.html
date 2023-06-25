@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 내 맘대로 Mission1 </title>
+</head>
+<body id="myBody">
+    <button onclick="clearInterval(autoChangeColor)"> 실행 정지 </button>
+</body>
+<script>
+    // 1초에 한 번씩 Body의 backgroundColor가 바뀌는 웹
+
+    // script를 body 태그 아래 두는 이유
+    // => 페이지가 렌더링되기 전에 스크립트가 실행되기 때문에 bodyTag가 Null이 되기 때문에
+    const arrColor = ["#ff0", "#6c0", "#fcf", "#cf0", "#39f"];
+    let arrNum = 0;
+    let bodyTag = document.getElementById("myBody");
+
+    let autoChangeColor = setInterval(function() {
+        bodyTag.style.backgroundColor = arrColor[arrNum];
+        if (arrNum >= arrColor.length) {
+            arrNum = 0;
+        } else {
+            arrNum++;
+        }
+    }, 1000);
+</script>
+</html>
