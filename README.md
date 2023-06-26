@@ -1,1 +1,1 @@
-# study-javascript-jquery
+# JavaScript & JQuery 공부
