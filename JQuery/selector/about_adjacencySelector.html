@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 인접 관계 선택자 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("h1").next().css("color", "green");                       // 동생 요소인 `내용1`이 초록색 글자로 출력
+            $("h1").parent().css("border", "1px solid #f00");           // 부모 요소인 `inner_wrap`과 `section`에 빨간색 실선 생성
+
+            $("#wrap h1").css({                                         // #wrap이 포함하는 모든 <h1> 요소 선택
+                "background-color":"yellow",
+                "border":"2px dashed #000"
+            });
+
+            $("section > p").css("background-color", "lightblue");      // section의 <p>요소 선택 [OR $("요소 선택").children("자식 요소 선택")]
+            $("section > p").prev().css("color", "red");                // section의 <p> 요소의 형 요소인 h1의 글자색이 빨간색으로 출력
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="inner_wrap">
+            <h1> 제목1 </h1>
+            <p> 내용1 </p>
+            <section>
+                <h1> 하위 요소 선택자 </h1>
+                <p> 내용2 </p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

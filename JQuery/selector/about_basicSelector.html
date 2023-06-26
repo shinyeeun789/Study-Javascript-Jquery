@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 기본 선택자 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("*").css("border", "1px solid blue");             // 전체 요소 선택자
+            $("#title, p").css("background-color", "#0ff");     // 그룹 선택자
+            $("#title").css("color", "red");                    // ID 선택자
+            $("p").css("color", "green");                       // 요소명 선택자
+            $(".sub_title").css("color", "blue");               // CLASS 선택자
+        });
+    </script>
+</head>
+<body>
+    <h1 id="title"> 제목 </h1>
+    <p> p태그 </p>
+    <h2 class="sub_title"> 소제목 </h2>
+</body>
+</html>
