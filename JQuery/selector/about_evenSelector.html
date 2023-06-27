@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> even & odd </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#menu li:odd")           // 짝수
+                .css({"background-color":"gray"});
+            $("#menu li:even")          // 홀수
+                .css({"background-color":"orange"});
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1 class="title"> 탐색 선택자 </h1>
+        <ul id="menu">
+            <li> 메뉴1 </li>
+            <li> 메뉴2 </li>
+            <li> 메뉴3 </li>
+            <li> 메뉴4 </li>
+        </ul>
+    </div>
+</body>
+</html>
