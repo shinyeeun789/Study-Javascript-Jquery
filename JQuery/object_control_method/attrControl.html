@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 조작 메서드 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('h2').html('<p> 안녕하세요 </p>');            // p태그와 text 전부 생성 (virtual DOM 생성)
+            console.log($('h1').html());                   // `<strong> 객체 조작 및 생성 </strong>` 출력
+
+            $('h3').text('<p> 한 번 바꿔볼게 </p>');        // text만 생성 (Virtual DOM 생성X)
+
+            console.log($('img').attr('width'));           // `500` 출력
+            $('img').attr('src', 'https://cdn.pixabay.com/photo/2023/06/12/00/11/smartphone-8057248_1280.jpg');
+
+            // 마우스 올리고 내리면 이미지가 변경되도록
+            $('img').hover(function() {
+                $(this).attr("src", "https://cdn.pixabay.com/photo/2023/06/12/19/32/metro-8059215_1280.jpg");
+            }, function() {
+                $(this).attr("src", "https://cdn.pixabay.com/photo/2023/06/12/00/11/smartphone-8057248_1280.jpg");
+            })
+
+            $('img').removeAttr('src');                     // 이미지가 삭제되어 alt 속성으로 써놓은 text가 나옴
+            // !!!!! CSS 방식은 removeAttr() 메서드로 제거 불가능 !!!!!
+
+
+            // button 클릭 시 입력된 값 가져오기
+            $("#getText").click(function() {
+                alert($('input').val());
+            });
+
+            $('button').click(function() {                    // check인 상태에서 button을 누르면 true | 아닌 상태에서 button을 누르면 false 반환
+                let blue = $('#blue').prop('checked');
+                console.log(blue);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1><strong> 객체 조작 및 생성 </strong></h1>
+    <h2><em> html() </em></h2>
+    <h3> 텍스트 테스트 중 </h3>
+    
+    <img alt="girl" width="500" height="800"/> <br/>
+
+    <input type="text">
+    <button id="getText"> 가져오기 </button> <br/>
+
+    <input type="checkbox" id="blue" name="color" value="blue"> BLUE
+    <input type="checkbox" id="red" name="red" value="red"> RED
+    <button> 확인 </button>
+</body>
+</html>
