@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.inArray() | $.isArray() | $.merge() </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        /* $.inArray()  
+            => 배열에 저장된 데이터 중 지정한 데이터를 찾아 인덱스 값 반환
+        */
+        /* $.isArray()
+            => 지정한 데이터가 배열 객체면 true를, 배열 객체가 아니면 false를 반환
+        */
+        /* $.merge()
+            => 두 배열 객체를 하나의 객체로 묶음
+        */
+        $(function() {
+            let arr1 = ["서울", "대전", "부산", "전주"];
+            let arr2 = ["한국", "미국", "일본", "중국"];
+            let obj = {
+                "name" : "정부장",
+                "area" : "서울"
+            };
+
+            let idxNum = $.inArray("부산", arr1);
+            console.log(idxNum);
+
+            let okArray1 = $.isArray(arr1);
+            let okArray2 = $.isArray(obj);
+            console.log(okArray1);              // 배열 객체면 true
+            console.log(okArray2);              // 배열 객체가 아니면 false
+
+            $.merge(arr2, arr1);                // arr2에 arr1 이어붙이기
+            console.log(arr2);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
