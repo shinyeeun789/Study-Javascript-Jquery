@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> on() 메서드 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // 앞에서 배운 on() 메서드 등록 방식은 '라이브 이벤트 등록 방식'이 아님
+        // 이벤트를 등록한 다음에 새롭게 생성되거나 복제된 요소에는 이벤트를 등록할 수 없음
+
+        $(function() {
+            $(".btn_1.on").on("mouseover focus", function() {               // 이벤트를 등록하고 class 값을 생성하면 이벤트가 정상적으로 등록되지 않음
+                alert("HELLO!");
+            });
+            $(".btn_1").addClass("on");
+
+            $(document).on("mouseover focus", ".btn_2.on", function() {     // 라이브 이벤트 등록 방식으로 이벤트를 등록한 다음 class 값을 생성하면 이벤트가 정상적으로 등록
+                alert("WELCOME");
+            });
+            $(".btn_2").addClass("on");
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1"> 버튼1 </button></p>
+        <p><button class="btn_2"> 버튼2 </button></p>
+    </div>
+</body>
+</html>
