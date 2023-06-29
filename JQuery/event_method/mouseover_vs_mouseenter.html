@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 마우스 이벤트 메서드 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // mouseover()  : 직접 이벤트를 걸지 않은 자식 요소에 마우스 포인터가 와도 이벤트 발생
+        // mouseenter() : 자기 자신에게 마우스 포인터가 와야만 발생
+
+        $(function() {
+            let i = 0;
+            $("div.overout").mouseover(function() {
+                $("p:first", this).text("mouse over");
+                $("p:last", this).text(++i);
+            }).mouseout(function() {
+                $("p:first", this).text("mouse out");
+            });
+
+            let n = 0;
+            $("div.enterleave").mouseenter(function() {
+                $("p:first", this).text("mouse enter");
+                $("p:last", this).text(++n);
+            }).mouseleave(function() {
+                $("p:first", this).text("mouse leave");
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1> mouseover </h1>
+    <div class="out overout">
+        <p> move your mouse </p>
+        <div class="in overout">
+            <p> move your mouse </p>
+            <p> 0 </p>
+        </div>
+        <p> 0 </p>
+    </div>
+        
+    <h1> mouseenter </h1>
+    <div class="out enterleave">
+        <p> move your mouse </p>
+        <div class="in enterleave">
+            <p> move your mouse </p>
+            <p> 0 </p>
+        </div>
+        <p> 0 </p>
+    </div>
+</body>
+<style>
+    div.out {
+        width:40%;
+        height:120px;
+        margin:0 15px;
+        background-color:#D6EDFC;
+        float:left;
+    }
+    div.in {
+        width:60%;
+        height:60%;
+        background-color:#FFCC00;
+        margin:10px auto;
+    }
+    p {
+        line-height:1em;
+        margin:0;
+        padding:0;
+    }
+</style>
+</html>
