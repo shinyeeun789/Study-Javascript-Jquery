@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 이벤트가 발생한 요소 추적하기 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".menuWrap_1 a").on("click", function(e) {
+                e.preventDefault();
+
+                $(".menuWrap_1 a").css({            // a 태그의 배경 모두 흰색으로 변경
+                    "background-color" : "#fff"
+                });
+
+                $(this).css({                       // 지금 선택한 메뉴만 노란색으로 변경
+                    "background-color" : "#ff0"
+                });
+            });
+
+            $(".menuWrap_2 a").on("click", function(e) {
+            e.preventDefault();
+
+            $(".menuWrap_2 a").css({                // a 태그의 배경 모두 흰색으로 변경
+                "background-color" : "#fff"
+            });
+
+            let idx = $(".menuWrap_2 a").index(this);
+
+            $(".menuWrap_2 a").eq(idx).css({
+                "background-color" : "#0ff"
+            });
+        });
+        });
+    </script>
+</head>
+<body>
+    <h2> $(this) </h2>
+    <ul class="menuWrap_1">
+        <li><a href="#"> 메뉴1 </a></li>
+        <li><a href="#"> 메뉴2 </a></li>
+        <li><a href="#"> 메뉴3 </a></li>
+    </ul>
+    
+    <h2> Index() </h2>
+    <ul class="menuWrap_2">
+        <li><a href="#"> 메뉴4 </a></li>
+        <li><a href="#"> 메뉴5 </a></li>
+        <li><a href="#"> 메뉴6 </a></li>
+    </ul>
+
+    <p class="idxNum"></p>
+</body>
+</html>
