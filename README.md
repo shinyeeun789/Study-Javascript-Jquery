@@ -52,3 +52,10 @@ JavaScript와 JQuery 학습을 위한 Repository
 - 키워드 생략 가능
 - 중복 선언 가능
 - 호이스팅 당함
+<br/>
+
+## 📦 JQuery
+### 1. Animation Method
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/animation_method/about_animate.html"> 📜 animate() 메서드 </a>
+- 선택한 요소에 다양한 동작(Motion) 효과 적용 가능
+- 요소를 앞으로 이동시키거나 점차 커지게 하는 등 다양한 동작 적용 가능
