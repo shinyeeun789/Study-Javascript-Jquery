@@ -1,5 +1,5 @@
 # Study About JavaScript & JQuery
-JavaScript와 JQuery 학습을 위한 REPOSITORY
+JavaScript와 JQuery 학습을 위한 Repository
 
 ## 📦 JAVASCRIPT
 ### 1. Function
@@ -21,4 +21,34 @@ JavaScript와 JQuery 학습을 위한 REPOSITORY
 
 #### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JAVASCRIPT/function/lexicalScope_vs_dynamicScope.html"> 📜 Lexical Scope VS Dynamic Scope </a>
 - 렉시컬 스코프(Lexical Scope): 함수를 어디에서 호출하는지가 아니라 어디에 선언하였는지에 따라 결정
-- 동적 스코프(Dynamic Scope): 함수의 호출에 따라 상위 스코프가 결
+- 동적 스코프(Dynamic Scope): 함수의 호출에 따라 상위 스코프가 결정
+<br/>
+
+### 2. String Method
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JAVASCRIPT/string_method/match_vs_search_indexOf.html"> 📜 match VS search VS indexOf </a>
+- 공통점: 처음 검색된 문자열의 인덱스 반환
+- match: 찾는 값이 없다면 null 반환
+- search: 찾는 값이 없다면 -1 반환 / 두 번째 혹은 다른 시작 위치를 인수로 지정할 수 없음
+- indexOf: 찾는 값이 없다면 -1 반환 / 시작 인덱스 지정 가능
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JAVASCRIPT/string_method/slice_vs_substring_vs_substr.html"> 📜 slice VS substring VS substr </a>
+- 공통점: 문자열을 잘라주는 함수
+<br/>
+
+### 3. Variable
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JAVASCRIPT/variable/about_const.html"> 📜 const </a>
+- 초기화와 동시에 선언이 이루어져야 함
+- const 자체가 값을 불변으로 만드는 것은 아님
+- 상수를 선언할 때 사용
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JAVASCRIPT/variable/about_let.html"> 📜 let </a>
+- 블록 레벨 스코프를 가지고 있음
+- 키워드 생략 불가능
+- 중복 선언 불가능
+- 호이스팅 당함 (단, TDZ를 통해)
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JAVASCRIPT/variable/about_var.html"> 📜 var </a>
+- 함수 레벨 스코프를 가지고 있음
+- 키워드 생략 가능
+- 중복 선언 가능
+- 호이스팅 당함
