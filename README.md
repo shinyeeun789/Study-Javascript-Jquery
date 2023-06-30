@@ -1,5 +1,5 @@
 # Study About JavaScript & JQuery
-JavaScript와 JQuery 학습을 위한 Repository
+JavaScript와 JQuery 학습을 위한 Repository입니다.
 
 ## 📦 JAVASCRIPT
 ### 1. Function
