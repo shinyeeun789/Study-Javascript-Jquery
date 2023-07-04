@@ -33,6 +33,15 @@ JavaScript와 JQuery 학습을 위한 Repository입니다.
 
 #### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JAVASCRIPT/string_method/slice_vs_substring_vs_substr.html"> 📜 slice VS substring VS substr </a>
 - 공통점: 문자열을 잘라주는 함수
+```
+=== substring() ===
+str.substring(1, 0); => str.substring(0, 1);
+str.substring(3, -1); => str.substring(0, 3);
+
+=== slice() ===
+str.slice(1, 0); => "" 리턴
+str.slice(3, -1); => python과 통일
+``` 
 <br/>
 
 ### 3. Variable
@@ -147,7 +156,7 @@ $(document).on("이벤트", "요소 선택", function);
 - removeAttr() : 선택한 요소에서 기존의 속성을 삭제할 때 사용
 - !!!! CSS 방식은 removeAttr() 메서드로 제거 불가능 !!!!
 
-#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/tree/main/JQuery/object_control_method"> 수치 조작 메서드 </a>
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/tree/main/JQuery/object_control_method"> 📜 수치 조작 메서드 </a>
 ```
 $("요소 선택").position().[left | right | top | bottom];
 ```
@@ -169,10 +178,60 @@ $("요소 선택").scrollLeft(새 값);
 <br/>
 
 ### 5. 선택자
-#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_adjacencySelector.html"> 인접 관계 선택자 </a>
-- 부모 요소 선택자: $("요소 선택").parent()
-- 상위 요소 선택자: $("요소 선택").parents()
-- 가장 가까운 상위 요소 선택자: $("요소 선택").closest("div")
-- 자식 요소 선택자: $("요소 선택>자식 요소")
-- 자식 요소들 선택자: $("요소 선택").children()
-- 
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_adjacencySelector.html"> 📜 인접 관계 선택자 </a>
+- $("요소 선택").parent() : 부모 요소 선택자
+- $("요소 선택").parents() : 상위 요소 선택자
+- $("요소 선택").closest("div") : 가장 가까운 상위 요소 선택자
+- $("요소 선택>자식 요소") : 자식 요소 선택자
+- $("요소 선택").children() : 자식 요소들 선택자
+- $("요소 선택").prev() : 형(이전) 요소 선택자
+- $("요소 선택").prevAll() : 형(이전) 요소들 선택자
+- $("요소 선택").prevUntil("요소명") : 지정 형(이전) 요소들 선택자
+- $("요소 선택").next() : 동생(다음) 요소 선택자
+- $("요소 선택+다음 요소") : 동생(다음) 요소 선택자
+- $("요소 선택").nextAll() : 동생(다음) 요소들 선택자
+- $(".box_1").siblings() : 전체 형제 요소 선택자
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_attributeSelector.html"> 📜 속성과 값에 따른 탐색 선택자 </a>
+```
+$("요소 선택[속성]") : 선택한 요소 중 지정한 속성이 포함된 요소만 선택
+$("요소 선택[속성^=값]") : 선택한 요소 중 속성값이 명시한 값으로 시작하는 요소만 선택
+$("요소 선택[속성$=값]") : 선택한 요소 중 속성값이 명시한 값으로 끝나는 요소만 선택
+$("요소 선택[속성*=값]") : 선택한 요소 중 속성값이 명시한 값을 포함하는 요소만 선택
+$(":type 속성값") : input 요소 중 type 속성값이 일치하는 요소만 선택
+```
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_basicSelector.html"> 📜 기본 선택자 </a>
+- $("*") : 전체 선택자
+- $("#아이디명") : 아이디 선택자
+- $(".클래스명") : 클래스 선택자
+- $("요소명") : 요소 선택자
+- $("선택1, 선택2, 선택3, ...) : 그룹 선택자
+- $("p.txt_1) : 종속 선택자
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_containsSelector.html"> 📜 콘텐츠 탐색 선택자 </a>
+- $("요소 선택:contains(텍스트)") : 텍스트를 포함하는 요소만 선택
+- $("요소 선택").contents() : 선택한 요소의 하위 요소 중 가장 가까운 하위 요소 선택
+- $("요소 선택:has(요소명)") : 선택한 요소 중 요소명을 포함하는 요소만 선택
+- $("요소 선택").has(요소명) : 선택한 요소 중 요소명을 포함하는 요소만 선택
+- $("요소 선택:not(:제외 요소)") : 제외 요소만 제외하고 선택
+- $("요소 선택").not(:제외 요소) : 제외 요소만 제외하고 선택
+- $("요소 선택").filter(".list2") : 요소 중 class 값이 "list2"인 요소만 선택
+- $("요소 선택1").find("요소 선택2") : '요소 선택1'의 하위 요소인 '요소 선택2'만 선택
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_firstOfTypeSelector.html"> 📜 first VS last </a>
+```
+li:first => 첫 번째 요소 선택
+li:last => 마지막 요소 선택
+li:first-of-type => li 요소 중 첫 번째 요소만 선택
+li:last-of-type  => li 요소 중 마지막 요소만 선택
+```
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_nthChild.html"> 📜 nth-child </a>
+```
+$("요소 선택:nth-child(1)")
+```
+
+#### <a href="https://github.com/shinyeeun789/Study-Javascript-Jquery/blob/main/JQuery/selector/about_onlyChild.html"> 📜 탐색 선택자 </a>
+- $("요소 선택").slice(1, 3) : 1, 2 요소 선택
+- $("요소 선택:only-child") : 선택한 요소가 부모 요소에게 하나뿐인 자식 요소면 선택
