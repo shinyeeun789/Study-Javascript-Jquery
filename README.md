@@ -1,4 +1,4 @@
-# Study About JavaScript & JQuery
+# JavaScript & JQuery 학습하기
 JavaScript와 JQuery 학습을 위한 Repository입니다.
 
 ## 📦 JAVASCRIPT
